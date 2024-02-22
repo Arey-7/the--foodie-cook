@@ -1,0 +1,28 @@
+.card{
+    background-color: white;
+    width: 30%;
+    aspect-ratio: 1/1;
+    margin: 40px auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.title{
+    font-family: monospace;
+    color: darkcyan;
+    display: block;
+    margin: auto;
+}
+
+.imageContainer{
+    width: 100%;
+}
+
+.image{
+    width: 85%;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+}

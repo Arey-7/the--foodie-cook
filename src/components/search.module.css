@@ -1,0 +1,15 @@
+.container{
+    margin: 20px auto;
+    width: 35%;
+    position: relative;
+    padding: 10px;
+}
+
+.input{
+    border: none;
+    border-bottom: 1px solid #e3e4dc;
+    padding: 10px 20px;
+    font-size: x-large;
+    width: 100%;
+    outline: none;
+}

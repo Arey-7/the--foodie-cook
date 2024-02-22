@@ -1,0 +1,15 @@
+.nav {
+    background-color: aquamarine;
+    font-size: 3em;
+    font-family: monospace;
+    font-weight: bold;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.home {
+    display: block;
+    text-decoration: none;
+    color: deeppink;
+    text-align: center;
+}

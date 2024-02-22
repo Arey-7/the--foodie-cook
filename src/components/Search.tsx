@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
+import { FoodInfo } from "../types";
+import styles from "./search.module.css";
 
-const URL = "http://localhost:777/food";
+const URL = "http://localhost:777";
 
-export default function Search() {
+export default function Search({
+  foodData,
+  setFoodData,
+}: {
+  foodData: FoodInfo[];
+  setFoodData: React.Dispatch<React.SetStateAction<FoodInfo[]>>;
+}) {
   const [query, setQuery] = useState("");
   useEffect(() => {
     async function fetchFood() {
       try {
         const response = await fetch(`${URL}?query=${query}`);
         const data = await response.json();
-        console.log(data);
         // Handle the fetched data as needed
+        setFoodData(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -21,11 +29,16 @@ export default function Search() {
   }, [query]);
 
   return (
-    <input
-      type="text"
-      placeholder="Search Foods..."
-      value={query}
-      onChange={(e) => setQuery(e.target.value)}
-    />
+    <div className={styles.container}>
+      <input
+        className={styles.input}
+        type="text"
+        id="search"
+        name="search"
+        placeholder="Search Foods..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+    </div>
   );
 }
