@@ -23,8 +23,21 @@ export default function Search({
         console.error("Error fetching data:", error);
       }
     }
+    async function fetchDefaultFood() {
+      try {
+        const response = await fetch(`${URL}`);
+        const data = await response.json();
+        // Handle the fetched data as needed
+        setFoodData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
     if (query) {
       fetchFood();
+    } 
+    else {
+      fetchDefaultFood();
     }
   }, [query]);
 

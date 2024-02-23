@@ -12,10 +12,8 @@ function App() {
 
   return (
     <main>
-      <Nav />
+      <Nav foodData={foodData} setFoodData={setFoodData} />
       <div className="content">
-        <h1>What would you like to eat today?</h1>
-        <Search foodData={foodData} setFoodData={setFoodData} />
         <FoodList foodData={foodData} />
       </div>
     </main>

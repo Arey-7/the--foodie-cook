@@ -1,15 +1,15 @@
 .nav {
-    background-color: aquamarine;
-    font-size: 3em;
-    font-family: monospace;
-    font-weight: bold;
-    padding: 20px;
-    margin: 0 auto;
+  background-color: black;
+  font-family: monospace;
+  font-weight: bold;
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .home {
-    display: block;
-    text-decoration: none;
-    color: deeppink;
-    text-align: center;
+  text-decoration: none;
+  color: aquamarine;
+  font-size: 2rem;
 }

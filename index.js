@@ -15,7 +15,8 @@ const API_KEY = process.env.API_KEY;
 
 app.get("/", async (req, res) => {
   const { query } = req.query;
-  try {
+  if (query){
+    try {
     const response = await axios.get(URL, {
       params: {
         query,
@@ -27,6 +28,21 @@ app.get("/", async (req, res) => {
   } catch (error) {
     console.error("Error fetching data:", error.message);
     res.status(500).json({ error: "Internal server error" });
+  }
+  }
+  else{
+    try {
+      const response = await axios.get(URL, {
+        params: {
+          apiKey: API_KEY,
+        },
+      });
+      const data = response.data.results;
+      res.json(data);
+    } catch (error) {
+      console.error("Error fetching data:", error.message);
+      res.status(500).json({ error: "Internal server error" });
+    }
   }
 });
 
