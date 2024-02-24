@@ -28,6 +28,7 @@
   display: block;
   text-transform: uppercase;
   background-color: white;
+  opacity: 0.8;
   margin: 30px auto;
   bottom: 0;
   left: 0;
